@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UU Real Estate Bulgaria | Sea & Ski Properties from €35,000</title>
+    <meta name="description" content="Buy property in Bulgaria: seaside apartments in Sunny Beach, Varna & Burgas, ski chalets in Bansko, and rural villas. Full legal support & remote purchase.">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0B3B60',
+                        secondary: '#E65100',
+                        accent: '#00897B',
+                        dark: '#1E293B',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-secondary selection:text-white">
+
+    <!-- TOP BAR -->
+    <header class="bg-dark text-slate-300 text-xs py-2 px-4 border-b border-slate-700">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+            <div class="flex items-center gap-4">
+                <span><i class="fa-solid fa-location-dot text-secondary mr-1"></i> bul. "Aleksandar Bogoridi" 42, 8000 Burgas, Bulgaria</span>
+                <span class="hidden md:inline"><i class="fa-solid fa-clock text-secondary mr-1"></i> Mon-Sat: 09:00 - 19:00 (EET)</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="https://wa.me/359885149901" target="_blank" class="hover:text-green-400 transition flex items-center gap-1">
+                    <i class="fa-brands fa-whatsapp text-sm text-green-500"></i> WhatsApp
+                </a>
+                <a href="https://t.me/uurealestate" target="_blank" class="hover:text-sky-400 transition flex items-center gap-1">
+                    <i class="fa-brands fa-telegram text-sm text-sky-400"></i> Telegram
+                </a>
+                <a href="tel:+35956892104" class="font-semibold text-white hover:text-secondary transition">
+                    <i class="fa-solid fa-phone text-xs mr-1 text-secondary"></i> +359 56 892 104
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN NAVBAR -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="#" class="flex items-center gap-3">
+                    <div class="w-11 h-11 bg-primary text-white rounded-xl flex items-center justify-center font-bold text-xl shadow-md">
+                        UU
+                    </div>
+                    <div>
+                        <span class="text-xl font-extrabold text-primary tracking-tight">UU PROPERTIES</span>
+                        <p class="text-[10px] text-slate-500 font-semibold uppercase tracking-widest">Bulgaria Real Estate Hub</p>
+                    </div>
+                </a>
+
+                <div class="hidden lg:flex items-center gap-8 text-sm font-semibold text-slate-700">
+                    <a href="#properties" class="hover:text-secondary transition">Hot Deals</a>
+                    <a href="#locations" class="hover:text-secondary transition">Regions</a>
+                    <a href="#services" class="hover:text-secondary transition">Buyer Services</a>
+                    <a href="#residence" class="hover:text-secondary transition">Residence Permit</a>
+                    <a href="#reviews" class="hover:text-secondary transition">Reviews</a>
+                    <a href="#contact" class="hover:text-secondary transition">Office & Contact</a>
+                </div>
+
+                <div class="hidden sm:flex items-center gap-3">
+                    <a href="#selection-modal" onclick="openModal()" class="bg-secondary hover:bg-orange-600 text-white font-semibold text-sm px-5 py-2.5 rounded-lg shadow-lg shadow-orange-500/25 transition">
+                        <i class="fa-solid fa-sliders mr-1.5"></i> Property Match Quiz
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-toggle" class="lg:hidden text-2xl text-slate-700 focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-200 px-6 py-4 space-y-3">
+            <a href="#properties" class="block py-2 text-slate-700 font-medium">Hot Deals</a>
+            <a href="#locations" class="block py-2 text-slate-700 font-medium">Regions</a>
+            <a href="#services" class="block py-2 text-slate-700 font-medium">Buyer Services</a>
+            <a href="#residence" class="block py-2 text-slate-700 font-medium">Residence Permit</a>
+            <a href="#reviews" class="block py-2 text-slate-700 font-medium">Reviews</a>
+            <a href="#contact" class="block py-2 text-slate-700 font-medium">Contact</a>
+            <button onclick="openModal()" class="w-full bg-secondary text-white py-2.5 rounded-lg font-semibold mt-2">Request Catalog</button>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION WITH LEAD CAPTURE -->
+    <section class="relative min-h-[640px] flex items-center justify-center bg-slate-900 overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=1920&q=80" 
+             alt="Bulgaria Coast" 
+             class="absolute inset-0 w-full h-full object-cover opacity-35">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/60 to-transparent"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+            <span class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md text-amber-300 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full mb-6 border border-white/20">
+                <i class="fa-solid fa-shield-check"></i> Licensed Real Estate Agency in Burgas & Varna
+            </span>
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight max-w-4xl mx-auto">
+                Discover Affordable Seafront & Mountain Properties in <span class="text-amber-400">Bulgaria</span>
+            </h1>
+            <p class="mt-5 text-slate-300 text-base sm:text-xl max-w-2xl mx-auto">
+                Studios, beachfront apartments, and rural retreats from <span class="text-white font-bold">€35,000</span>. Complete legal audit, remote deals, and residency assistance.
+            </p>
+
+            <!-- Search / Filter Card -->
+            <div class="mt-10 bg-white p-4 sm:p-6 rounded-2xl shadow-2xl max-w-4xl mx-auto text-left text-slate-800">
+                <form id="hero-filter-form" onsubmit="event.preventDefault(); openModal();" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Region</label>
+                        <select class="w-full bg-slate-50 border border-slate-300 text-slate-700 text-sm rounded-lg p-2.5 focus:ring-2 focus:ring-primary focus:outline-none">
+                            <option>All Bulgaria</option>
+                            <option>Sunny Beach & Nessebar</option>
+                            <option>Burgas & Sozopol</option>
+                            <option>Varna & St. Vlas</option>
+                            <option>Bansko (Ski Resort)</option>
+                            <option>Country & Rural Villages</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Property Type</label>
+                        <select class="w-full bg-slate-50 border border-slate-300 text-slate-700 text-sm rounded-lg p-2.5 focus:ring-2 focus:ring-primary focus:outline-none">
+                            <option>Studio Apartment</option>
+                            <option>1-Bedroom (2 Rooms)</option>
+                            <option>2+ Bedroom Penthouse</option>
+                            <option>Detached House / Villa</option>
+                            <option>Commercial Property</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Budget</label>
+                        <select class="w-full bg-slate-50 border border-slate-300 text-slate-700 text-sm rounded-lg p-2.5 focus:ring-2 focus:ring-primary focus:outline-none">
+                            <option>Up to €40,000</option>
+                            <option>€40,000 - €70,000</option>
+                            <option>€70,000 - €120,000</option>
+                            <option>€120,000 - €250,000</option>
+                            <option>Luxury (€250k+)</option>
+                        </select>
+                    </div>
+                    <div class="flex items-end">
+                        <button type="submit" class="w-full bg-secondary hover:bg-orange-600 text-white font-bold py-2.5 px-4 rounded-lg transition duration-200 flex items-center justify-center gap-2 shadow-md">
+                            <i class="fa-solid fa-magnifying-glass"></i> Find Listings
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Trust numbers -->
+            <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto border-t border-white/10 pt-8 text-white">
+                <div>
+                    <p class="text-3xl font-extrabold text-amber-400">1,250+</p>
+                    <p class="text-xs text-slate-300 uppercase tracking-wider mt-1">Verified Properties</p>
+                </div>
+                <div>
+                    <p class="text-3xl font-extrabold text-amber-400">10%</p>
+                    <p class="text-xs text-slate-300 uppercase tracking-wider mt-1">Flat Tax Rate in EU</p>
+                </div>
+                <div>
+                    <p class="text-3xl font-extrabold text-amber-400">14 Days</p>
+                    <p class="text-xs text-slate-300 uppercase tracking-wider mt-1">Average Remote Deal</p>
+                </div>
+                <div>
+                    <p class="text-3xl font-extrabold text-amber-400">0%</p>
+                    <p class="text-xs text-slate-300 uppercase tracking-wider mt-1">Buyer Commission On New Builds</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED PROPERTIES SECTION -->
+    <section id="properties" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+            <div>
+                <span class="text-secondary font-bold text-xs uppercase tracking-widest">Handpicked Catalog</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Latest Hot Deals in Bulgaria</h2>
+                <p class="text-slate-500 mt-2">Each property has passed full independent legal scrutiny with clean title deeds.</p>
+            </div>
+            <div class="mt-4 md:mt-0 flex gap-2">
+                <button class="px-4 py-2 bg-primary text-white rounded-lg text-sm font-semibold">All</button>
+                <button class="px-4 py-2 bg-slate-200 text-slate-700 hover:bg-slate-300 rounded-lg text-sm font-semibold transition">Sea Front</button>
+                <button class="px-4 py-2 bg-slate-200 text-slate-700 hover:bg-slate-300 rounded-lg text-sm font-semibold transition">Mountain/Bansko</button>
+                <button class="px-4 py-2 bg-slate-200 text-slate-700 hover:bg-slate-300 rounded-lg text-sm font-semibold transition">Houses</button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Property 1 -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition group border border-slate-100 flex flex-col justify-between">
+                <div>
+                    <div class="relative overflow-hidden aspect-[16/10]">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" 
+                             alt="Luxury Seafront Apartment Sunny Beach" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 left-3 bg-red-600 text-white font-bold text-xs px-2.5 py-1 rounded-md uppercase">Urgent Sale</span>
+                        <span class="absolute bottom-3 right-3 bg-dark/90 backdrop-blur-md text-amber-400 font-extrabold text-lg px-3 py-1 rounded-lg">€48,500</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-xs text-slate-400 gap-2 mb-2 font-medium">
+                            <i class="fa-solid fa-location-dot text-secondary"></i> Sunny Beach, Burgas Region • 150m to beach
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900 group-hover:text-primary transition line-clamp-1">Sunny Dream Residence 1-Bed</h3>
+                        <p class="text-slate-500 text-sm mt-2 line-clamp-2">Furnished 1-bedroom apartment in a gated resort with 2 pools, spa, and rental management pool.</p>
+                        
+                        <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-600 font-semibold">
+                            <span><i class="fa-solid fa-maximize text-slate-400 mr-1"></i> 58 m²</span>
+                            <span><i class="fa-solid fa-bed text-slate-400 mr-1"></i> 1 Bed</span>
+                            <span><i class="fa-solid fa-bath text-slate-400 mr-1"></i> 1 Bath</span>
+                            <span><i class="fa-solid fa-elevator text-slate-400 mr-1"></i> 3rd Floor</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 pt-0">
+                    <button onclick="requestProperty('Sunny Dream Residence 1-Bed - €48,500')" class="w-full bg-slate-100 hover:bg-primary hover:text-white text-slate-800 font-bold py-2.5 rounded-lg text-sm transition">
+                        Request Full Presentation & Video Tour
+                    </button>
+                </div>
+            </div>
+
+            <!-- Property 2 -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition group border border-slate-100 flex flex-col justify-between">
+                <div>
+                    <div class="relative overflow-hidden aspect-[16/10]">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" 
+                             alt="Luxury Villa in Sozopol" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 left-3 bg-accent text-white font-bold text-xs px-2.5 py-1 rounded-md uppercase">Premium</span>
+                        <span class="absolute bottom-3 right-3 bg-dark/90 backdrop-blur-md text-amber-400 font-extrabold text-lg px-3 py-1 rounded-lg">€149,000</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-xs text-slate-400 gap-2 mb-2 font-medium">
+                            <i class="fa-solid fa-location-dot text-secondary"></i> Sozopol, Budjaka • Panoramic Sea View
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900 group-hover:text-primary transition line-clamp-1">Villa Horizon with Private Garden</h3>
+                        <p class="text-slate-500 text-sm mt-2 line-clamp-2">Modern 3-room townhouse with unobstructed Black Sea vistas, infinity pool access, and parking bay.</p>
+                        
+                        <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-600 font-semibold">
+                            <span><i class="fa-solid fa-maximize text-slate-400 mr-1"></i> 118 m²</span>
+                            <span><i class="fa-solid fa-bed text-slate-400 mr-1"></i> 2 Beds</span>
+                            <span><i class="fa-solid fa-bath text-slate-400 mr-1"></i> 2 Baths</span>
+                            <span><i class="fa-solid fa-tree text-slate-400 mr-1"></i> 140 m² Plot</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 pt-0">
+                    <button onclick="requestProperty('Villa Horizon Sozopol - €149,000')" class="w-full bg-slate-100 hover:bg-primary hover:text-white text-slate-800 font-bold py-2.5 rounded-lg text-sm transition">
+                        Request Full Presentation & Video Tour
+                    </button>
+                </div>
+            </div>
+
+            <!-- Property 3 -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition group border border-slate-100 flex flex-col justify-between">
+                <div>
+                    <div class="relative overflow-hidden aspect-[16/10]">
+                        <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80" 
+                             alt="Bansko Ski Chalet Apartment" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 left-3 bg-blue-600 text-white font-bold text-xs px-2.5 py-1 rounded-md uppercase">Ski Resort</span>
+                        <span class="absolute bottom-3 right-3 bg-dark/90 backdrop-blur-md text-amber-400 font-extrabold text-lg px-3 py-1 rounded-lg">€37,900</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-xs text-slate-400 gap-2 mb-2 font-medium">
+                            <i class="fa-solid fa-location-dot text-secondary"></i> Bansko, Pirin Golf Area • 500m to Gondola
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900 group-hover:text-primary transition line-clamp-1">Alpine Lodge Studio with Fireplace</h3>
+                        <p class="text-slate-500 text-sm mt-2 line-clamp-2">Year-round rental yield, cozy timber finishes, heated ski depot, sauna complex and underground parking.</p>
+                        
+                        <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-600 font-semibold">
+                            <span><i class="fa-solid fa-maximize text-slate-400 mr-1"></i> 44 m²</span>
+                            <span><i class="fa-solid fa-bed text-slate-400 mr-1"></i> Studio</span>
+                            <span><i class="fa-solid fa-fire text-slate-400 mr-1"></i> Fireplace</span>
+                            <span><i class="fa-solid fa-person-skiing text-slate-400 mr-1"></i> Ski Lift</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 pt-0">
+                    <button onclick="requestProperty('Alpine Lodge Studio Bansko - €37,900')" class="w-full bg-slate-100 hover:bg-primary hover:text-white text-slate-800 font-bold py-2.5 rounded-lg text-sm transition">
+                        Request Full Presentation & Video Tour
+                    </button>
+                </div>
+            </div>
+
+            <!-- Property 4 -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition group border border-slate-100 flex flex-col justify-between">
+                <div>
+                    <div class="relative overflow-hidden aspect-[16/10]">
+                        <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80" 
+                             alt="Traditional Bulgarian Rural House" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 left-3 bg-emerald-600 text-white font-bold text-xs px-2.5 py-1 rounded-md uppercase">Rural & Quiet</span>
+                        <span class="absolute bottom-3 right-3 bg-dark/90 backdrop-blur-md text-amber-400 font-extrabold text-lg px-3 py-1 rounded-lg">€59,000</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-xs text-slate-400 gap-2 mb-2 font-medium">
+                            <i class="fa-solid fa-location-dot text-secondary"></i> Kosharitsa Village • 6km to Sea
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900 group-hover:text-primary transition line-clamp-1">Detached Country Villa with Orchard</h3>
+                        <p class="text-slate-500 text-sm mt-2 line-clamp-2">Authentic stone & brick villa, 900m² land with fruit trees, well, central water, fast fiber internet.</p>
+                        
+                        <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-600 font-semibold">
+                            <span><i class="fa-solid fa-maximize text-slate-400 mr-1"></i> 130 m²</span>
+                            <span><i class="fa-solid fa-bed text-slate-400 mr-1"></i> 3 Beds</span>
+                            <span><i class="fa-solid fa-warehouse text-slate-400 mr-1"></i> Garage</span>
+                            <span><i class="fa-solid fa-seedling text-slate-400 mr-1"></i> 900m² Yard</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 pt-0">
+                    <button onclick="requestProperty('Country Villa Kosharitsa - €59,000')" class="w-full bg-slate-100 hover:bg-primary hover:text-white text-slate-800 font-bold py-2.5 rounded-lg text-sm transition">
+                        Request Full Presentation & Video Tour
+                    </button>
+                </div>
+            </div>
+
+            <!-- Property 5 -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition group border border-slate-100 flex flex-col justify-between">
+                <div>
+                    <div class="relative overflow-hidden aspect-[16/10]">
+                        <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80" 
+                             alt="St Vlas Marina Dinevi Apartment" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 left-3 bg-purple-600 text-white font-bold text-xs px-2.5 py-1 rounded-md uppercase">Yacht Marina</span>
+                        <span class="absolute bottom-3 right-3 bg-dark/90 backdrop-blur-md text-amber-400 font-extrabold text-lg px-3 py-1 rounded-lg">€82,000</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-xs text-slate-400 gap-2 mb-2 font-medium">
+                            <i class="fa-solid fa-location-dot text-secondary"></i> Sveti Vlas • First Coastline
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900 group-hover:text-primary transition line-clamp-1">Panorama Bay 2-Room Suite</h3>
+                        <p class="text-slate-500 text-sm mt-2 line-clamp-2">Exclusive microclimate where mountain air meets sea breeze. Fully furnished with designer appliances.</p>
+                        
+                        <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-600 font-semibold">
+                            <span><i class="fa-solid fa-maximize text-slate-400 mr-1"></i> 64 m²</span>
+                            <span><i class="fa-solid fa-bed text-slate-400 mr-1"></i> 1 Bed</span>
+                            <span><i class="fa-solid fa-water text-slate-400 mr-1"></i> Sea View</span>
+                            <span><i class="fa-solid fa-swimming-pool text-slate-400 mr-1"></i> 2 Pools</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 pt-0">
+                    <button onclick="requestProperty('Panorama Bay St Vlas - €82,000')" class="w-full bg-slate-100 hover:bg-primary hover:text-white text-slate-800 font-bold py-2.5 rounded-lg text-sm transition">
+                        Request Full Presentation & Video Tour
+                    </button>
+                </div>
+            </div>
+
+            <!-- Property 6 -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition group border border-slate-100 flex flex-col justify-between">
+                <div>
+                    <div class="relative overflow-hidden aspect-[16/10]">
+                        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80" 
+                             alt="Varna Sea Garden Apartment" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 left-3 bg-amber-600 text-white font-bold text-xs px-2.5 py-1 rounded-md uppercase">City Center</span>
+                        <span class="absolute bottom-3 right-3 bg-dark/90 backdrop-blur-md text-amber-400 font-extrabold text-lg px-3 py-1 rounded-lg">€115,000</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-xs text-slate-400 gap-2 mb-2 font-medium">
+                            <i class="fa-solid fa-location-dot text-secondary"></i> Varna • Near Sea Garden Park
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900 group-hover:text-primary transition line-clamp-1">Modern Urban Flat in Varna</h3>
+                        <p class="text-slate-500 text-sm mt-2 line-clamp-2">Ideal for permanent living in Bulgaria's sea capital. Act 16, low utility fees, walkable to beaches & schools.</p>
+                        
+                        <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-600 font-semibold">
+                            <span><i class="fa-solid fa-maximize text-slate-400 mr-1"></i> 76 m²</span>
+                            <span><i class="fa-solid fa-bed text-slate-400 mr-1"></i> 2 Beds</span>
+                            <span><i class="fa-solid fa-building text-slate-400 mr-1"></i> Act 16</span>
+                            <span><i class="fa-solid fa-square-parking text-slate-400 mr-1"></i> Parking</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 pt-0">
+                    <button onclick="requestProperty('Modern Urban Flat Varna - €115,000')" class="w-full bg-slate-100 hover:bg-primary hover:text-white text-slate-800 font-bold py-2.5 rounded-lg text-sm transition">
+                        Request Full Presentation & Video Tour
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Banner CTA -->
+        <div class="mt-16 bg-gradient-to-r from-primary to-slate-900 rounded-3xl p-8 sm:p-12 text-white flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl">
+            <div class="max-w-xl">
+                <span class="bg-amber-400 text-slate-900 font-bold text-xs uppercase px-3 py-1 rounded-md">Direct Developer Prices</span>
+                <h3 class="text-2xl sm:text-3xl font-extrabold mt-3">Didn't find what you are looking for?</h3>
+                <p class="text-slate-300 text-sm sm:text-base mt-2">We have over 400 off-market listings not published online to protect owner privacy. Get a personalized PDF catalog in 10 minutes.</p>
+            </div>
+            <button onclick="openModal()" class="whitespace-nowrap bg-secondary hover:bg-orange-600 font-bold px-8 py-4 rounded-xl text-white shadow-lg transition">
+                Get Private Catalog (PDF)
+            </button>
+        </div>
+    </section>
+
+    <!-- POPULAR REGIONS OVERVIEW -->
+    <section id="locations" class="py-20 bg-slate-100 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-secondary font-bold text-xs uppercase tracking-widest">Geographical Coverage</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Where to Buy in Bulgaria?</h2>
+                <p class="text-slate-600 mt-3">From lively coastal party towns to quiet mountain sanatoriums and metropolitan cities.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Location 1 -->
+                <div class="relative rounded-2xl overflow-hidden h-80 group cursor-pointer shadow-md">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" alt="Sunny Beach" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-5 left-5 right-5 text-white">
+                        <span class="text-amber-400 text-xs font-semibold uppercase">Coastline</span>
+                        <h4 class="text-xl font-bold">Sunny Beach & Nessebar</h4>
+                        <p class="text-xs text-slate-300 mt-1">High rental yields & endless sandy beaches</p>
+                    </div>
+                </div>
+
+                <!-- Location 2 -->
+                <div class="relative rounded-2xl overflow-hidden h-80 group cursor-pointer shadow-md">
+                    <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=600&q=80" alt="Burgas & Sozopol" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-5 left-5 right-5 text-white">
+                        <span class="text-amber-400 text-xs font-semibold uppercase">Year-round living</span>
+                        <h4 class="text-xl font-bold">Burgas & Sozopol</h4>
+                        <p class="text-xs text-slate-300 mt-1">International airport, parks & rich history</p>
+                    </div>
+                </div>
+
+                <!-- Location 3 -->
+                <div class="relative rounded-2xl overflow-hidden h-80 group cursor-pointer shadow-md">
+                    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=600&q=80" alt="Bansko Ski" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-5 left-5 right-5 text-white">
+                        <span class="text-amber-400 text-xs font-semibold uppercase">Ski & Mountain</span>
+                        <h4 class="text-xl font-bold">Bansko & Borovets</h4>
+                        <p class="text-xs text-slate-300 mt-1">Top European ski hub & thermal springs</p>
+                    </div>
+                </div>
+
+                <!-- Location 4 -->
+                <div class="relative rounded-2xl overflow-hidden h-80 group cursor-pointer shadow-md">
+                    <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80" alt="Varna Sea Capital" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-5 left-5 right-5 text-white">
+                        <span class="text-amber-400 text-xs font-semibold uppercase">Northern Riviera</span>
+                        <h4 class="text-xl font-bold">Varna & Golden Sands</h4>
+                        <p class="text-xs text-slate-300 mt-1">Cultural capital with top medical universities</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FULL BUYER SERVICES SECTION -->
+    <section id="services" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-secondary font-bold text-xs uppercase tracking-widest">End-to-End Support</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Comprehensive Buyer Services</h2>
+            <p class="text-slate-600 mt-3">We guide you through every stage of the Bulgarian real estate purchase with zero legal risks.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:border-secondary transition">
+                <div class="w-14 h-14 bg-orange-100 text-secondary rounded-xl flex items-center justify-center text-2xl mb-6">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">Legal Due Diligence</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    We verify encumbrances, bank mortgages, developer permits (Act 14, 15, 16), and marital rights directly via the Bulgarian Registry Agency (Имотен регистър).
+                </p>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:border-secondary transition">
+                <div class="w-14 h-14 bg-sky-100 text-sky-600 rounded-xl flex items-center justify-center text-2xl mb-6">
+                    <i class="fa-solid fa-signature"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">100% Remote Purchase</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    No need to fly. You can sign a power of attorney at any Bulgarian embassy or with an apostilled local notary. We handle all notary deeds on your behalf.
+                </p>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:border-secondary transition">
+                <div class="w-14 h-14 bg-teal-100 text-accent rounded-xl flex items-center justify-center text-2xl mb-6">
+                    <i class="fa-solid fa-id-card"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">Residency & Visa D (ВНЖ)</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    Full immigration support for retirees (pensia program), trade representation (TRO), and investors looking to reside permanently in the European Union.
+                </p>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:border-secondary transition">
+                <div class="w-14 h-14 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center text-2xl mb-6">
+                    <i class="fa-solid fa-building-columns"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">Bank Account & BULSTAT</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    Opening local client accounts, VAT registration, BULSTAT tax registrations, and setting up utilities auto-pay (EVN, ViK water, internet).
+                </p>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:border-secondary transition">
+                <div class="w-14 h-14 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center text-2xl mb-6">
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">Turnkey Renovation</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    English-speaking building contractors. Interior design, furniture packs, air conditioning installation, and repairs with guaranteed deadlines.
+                </p>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:border-secondary transition">
+                <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center text-2xl mb-6">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">Rental Property Management</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    Booking.com & Airbnb listings, key holding, professional cleaning, check-in/out, and sending profits directly to your bank account worldwide.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESIDENCE PERMIT (ВНЖ) INFO SECTION -->
+    <section id="residence" class="py-16 bg-gradient-to-br from-slate-900 via-primary to-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-amber-400 font-bold text-xs uppercase tracking-widest">EU Living Benefits</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold mt-2 leading-tight">
+                        Bulgarian Residency & Tax Advantages
+                    </h2>
+                    <p class="text-slate-300 mt-4 leading-relaxed">
+                        Bulgaria provides one of the easiest gateways to EU residency and Europe’s lowest tax burden. Our in-house immigration lawyers manage the entire dossier.
+                    </p>
+
+                    <div class="mt-6 space-y-4">
+                        <div class="flex items-start gap-4">
+                            <div class="w-7 h-7 bg-amber-400 text-slate-900 rounded-full flex items-center justify-center font-bold text-sm shrink-0 mt-1">✓</div>
+                            <div>
+                                <h4 class="font-bold text-white">10% Flat Corporate & Personal Income Tax</h4>
+                                <p class="text-sm text-slate-300">The lowest tax rate across the European Union.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-7 h-7 bg-amber-400 text-slate-900 rounded-full flex items-center justify-center font-bold text-sm shrink-0 mt-1">✓</div>
+                            <div>
+                                <h4 class="font-bold text-white">Retiree Visa Program (ВНЖ для пенсионеров)</h4>
+                                <p class="text-sm text-slate-300">Foreign retirees with certified pension income qualify easily for temporary residency.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-7 h-7 bg-amber-400 text-slate-900 rounded-full flex items-center justify-center font-bold text-sm shrink-0 mt-1">✓</div>
+                            <div>
+                                <h4 class="font-bold text-white">Air & Sea Schengen Member</h4>
+                                <p class="text-sm text-slate-300">Seamless travel across Europe without border queues.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <button onclick="openModal('Residency Inquiry')" class="bg-secondary hover:bg-orange-600 text-white font-bold px-6 py-3 rounded-xl transition shadow-lg">
+                            Consult with Immigration Lawyer
+                        </button>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/20">
+                        <h3 class="text-2xl font-bold mb-4">Request a Cost Estimate</h3>
+                        <p class="text-slate-300 text-sm mb-6">Calculate all closing costs (notary fees, local taxes 3%, legal fees) with zero hidden charges.</p>
+                        <form onsubmit="handleFormSubmit(event)" class="space-y-4">
+                            <div>
+                                <label class="text-xs text-slate-300 font-semibold block mb-1">Your Full Name</label>
+                                <input type="text" required placeholder="e.g. John Miller" class="w-full bg-white/20 border border-white/30 rounded-lg px-4 py-3 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-secondary">
+                            </div>
+                            <div>
+                                <label class="text-xs text-slate-300 font-semibold block mb-1">Phone / WhatsApp Number</label>
+                                <input type="tel" required placeholder="+44 7911 123456" class="w-full bg-white/20 border border-white/30 rounded-lg px-4 py-3 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-secondary">
+                            </div>
+                            <div>
+                                <label class="text-xs text-slate-300 font-semibold block mb-1">Target Property Value</label>
+                                <input type="text" placeholder="e.g. €60,000" class="w-full bg-white/20 border border-white/30 rounded-lg px-4 py-3 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-secondary">
+                            </div>
+                            <button type="submit" class="w-full bg-secondary hover:bg-orange-600 text-white font-bold py-3.5 rounded-lg shadow-lg transition">
+                                Calculate Closing Fees Now
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS / REVIEWS -->
+    <section id="reviews" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-secondary font-bold text-xs uppercase tracking-widest">Real Stories</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">What Our International Buyers Say</h2>
+            <p class="text-slate-600 mt-3">Over 800 foreign buyers have successfully bought holiday and permanent homes with UU Properties.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Review 1 -->
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 flex flex-col justify-between">
+                <div>
+                    <div class="flex text-amber-400 gap-1 mb-4 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-700 italic text-sm leading-relaxed mb-6">
+                        "We bought a 1-bedroom flat in Nessebar completely remotely while staying in Manchester. UU Properties handled the power of attorney, notary deed, and tax registration. When we arrived in June, the keys were ready and everything was sparkling clean!"
+                    </p>
+                </div>
+                <div class="flex items-center gap-4 pt-4 border-t border-slate-100">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Sarah & David Evans" class="w-12 h-12 rounded-full object-cover">
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-sm">Sarah & David Evans</h4>
+                        <p class="text-xs text-slate-500">Manchester, United Kingdom</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 flex flex-col justify-between">
+                <div>
+                    <div class="flex text-amber-400 gap-1 mb-4 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-700 italic text-sm leading-relaxed mb-6">
+                        "As a German pensioner, I wanted a quiet house near the coast with a garden. The team found an incredible property in Kosharitsa for just €62,000. They also organized my residence permit (ВНЖ) within 6 weeks. Outstanding professionalism."
+                    </p>
+                </div>
+                <div class="flex items-center gap-4 pt-4 border-t border-slate-100">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Hans Weber" class="w-12 h-12 rounded-full object-cover">
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-sm">Hans Weber</h4>
+                        <p class="text-xs text-slate-500">Munich, Germany</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 3 -->
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 flex flex-col justify-between">
+                <div>
+                    <div class="flex text-amber-400 gap-1 mb-4 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-700 italic text-sm leading-relaxed mb-6">
+                        "Invested in two ski studios in Bansko for winter rentals. UU Properties manages the Airbnb booking completely. I get a steady monthly ROI of around 8.5% net. If you want hassle-free European yield, this agency is the best in Bulgaria."
+                    </p>
+                </div>
+                <div class="flex items-center gap-4 pt-4 border-t border-slate-100">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80" alt="Michael Stein" class="w-12 h-12 rounded-full object-cover">
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-sm">Michael Stein</h4>
+                        <p class="text-xs text-slate-500">Tel Aviv, Israel</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT, PHYSICAL LOCATION & MAP SECTION -->
+    <section id="contact" class="py-20 bg-slate-100 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-secondary font-bold text-xs uppercase tracking-widest">Visit Us in Person</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Our Office & Inspection Trips</h2>
+                <p class="text-slate-600 mt-3">We provide free 3-day inspection tours: airport pickup in Burgas or Varna, hotel accommodation, and guided property visits.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                <!-- Contact info & Inspection Trip Form -->
+                <div class="lg:col-span-5 bg-white p-8 rounded-3xl shadow-sm border border-slate-200 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-6">Burgas Headquarters</h3>
+                        
+                        <div class="space-y-4 text-sm text-slate-600 mb-8">
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-location-dot text-secondary mt-1 text-base"></i>
+                                <div>
+                                    <strong class="block text-slate-800">Address:</strong>
+                                    bul. "Aleksandar Bogoridi" 42, 8000 Burgas Center, Bulgaria
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-phone text-secondary mt-1 text-base"></i>
+                                <div>
+                                    <strong class="block text-slate-800">Telephone:</strong>
+                                    +359 56 892 104 / +359 88 514 9901
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-envelope text-secondary mt-1 text-base"></i>
+                                <div>
+                                    <strong class="block text-slate-800">Email:</strong>
+                                    office@uu.radio.fm
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-plane-arrival text-secondary mt-1 text-base"></i>
+                                <div>
+                                    <strong class="block text-slate-800">Free Inspection Tour:</strong>
+                                    Free airport transfer from Burgas (BOJ) & Varna (VAR) airports.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Booking Form -->
+                    <form onsubmit="handleFormSubmit(event)" class="space-y-3 pt-6 border-t border-slate-100">
+                        <p class="font-bold text-slate-900 text-sm">Book a Free Viewing Tour</p>
+                        <input type="text" placeholder="Your Name" required class="w-full text-sm bg-slate-50 border border-slate-300 rounded-lg p-2.5 focus:outline-none focus:ring-2 focus:ring-primary">
+                        <input type="tel" placeholder="WhatsApp / Telegram Number" required class="w-full text-sm bg-slate-50 border border-slate-300 rounded-lg p-2.5 focus:outline-none focus:ring-2 focus:ring-primary">
+                        <button type="submit" class="w-full bg-primary hover:bg-slate-800 text-white font-bold py-3 rounded-lg text-sm transition">
+                            Schedule Free Viewing Tour
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Google Map Embed -->
+                <div class="lg:col-span-7 rounded-3xl overflow-hidden shadow-sm border border-slate-200 min-h-[380px] relative">
+                    <iframe 
+                        title="UU Properties Bulgaria Office"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2934.3986420138547!2d27.47291197660604!3d42.4936669711807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a694a106e2329b%3A0xcfe0cbff3ad88f0c!2sul.%20%22Aleksandar%20Bogoridi%22%2042%2C%208000%20Burgas%20Center%2C%20Burgas%2C%20Bulgaria!5e0!3m2!1sen!2sua!4v1700000000000!5m2!1sen!2sua" 
+                        class="w-full h-full min-h-[420px] border-0" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-slate-400 py-12 border-t border-slate-800 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            <div class="space-y-3">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-secondary text-white rounded-lg flex items-center justify-center font-bold text-sm">UU</div>
+                    <span class="text-lg font-bold text-white tracking-wide">UU PROPERTIES</span>
+                </div>
+                <p class="text-xs text-slate-400">
+                    Your premier partner for seaside, ski, and countryside real estate in the Republic of Bulgaria.
+                </p>
+                <p class="text-xs text-slate-500">Domain: uu.radio.fm</p>
+            </div>
+
+            <div>
+                <h4 class="text-white font-semibold mb-3">Popular Locations</h4>
+                <ul class="space-y-1.5 text-xs">
+                    <li><a href="#properties" class="hover:text-white transition">Sunny Beach Apartments</a></li>
+                    <li><a href="#properties" class="hover:text-white transition">Nessebar Old Town</a></li>
+                    <li><a href="#properties" class="hover:text-white transition">Sveti Vlas Marina Dinevi</a></li>
+                    <li><a href="#properties" class="hover:text-white transition">Bansko Ski Chalets</a></li>
+                    <li><a href="#properties" class="hover:text-white transition">Sozopol Luxury Villas</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-semibold mb-3">Legal & Services</h4>
+                <ul class="space-y-1.5 text-xs">
+                    <li><a href="#residence" class="hover:text-white transition">Bulgarian Residence Permit (ВНЖ)</a></li>
+                    <li><a href="#services" class="hover:text-white transition">Remote Closing & Notary POA</a></li>
+                    <li><a href="#services" class="hover:text-white transition">BULSTAT Tax Registration</a></li>
+                    <li><a href="#services" class="hover:text-white transition">Property Title Audit</a></li>
+                    <li><a href="#contact" class="hover:text-white transition">Free Inspection Trips</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-semibold mb-3">Get Daily Deals</h4>
+                <p class="text-xs text-slate-400 mb-3">Subscribe to get urgent foreclosures & distress sales directly on WhatsApp or email.</p>
+                <form onsubmit="handleFormSubmit(event)" class="flex gap-2">
+                    <input type="email" required placeholder="Enter email" class="w-full bg-slate-800 text-xs px-3 py-2 rounded-lg border border-slate-700 text-white focus:outline-none">
+                    <button type="submit" class="bg-secondary text-white text-xs font-bold px-3 py-2 rounded-lg hover:bg-orange-600 transition">Join</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-slate-800 text-xs flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p>&copy; 2026 UU Properties Bulgaria (uu.radio.fm). All Rights Reserved.</p>
+            <div class="flex gap-4">
+                <a href="#" class="hover:text-white">Privacy Policy</a>
+                <a href="#" class="hover:text-white">Terms of Sale</a>
+                <a href="#" class="hover:text-white">GDPR Compliance</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE LEAD MODAL -->
+    <div id="modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 relative shadow-2xl animate-fade-in">
+            <button onclick="closeModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-700 text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="text-center mb-6">
+                <span class="w-12 h-12 bg-orange-100 text-secondary rounded-2xl flex items-center justify-center text-xl mx-auto mb-3">
+                    <i class="fa-solid fa-envelope-open-text"></i>
+                </span>
+                <h3 id="modal-title" class="text-2xl font-bold text-slate-900">Request Property Info</h3>
+                <p class="text-sm text-slate-500 mt-1">Receive technical layouts, photos, video walkthrough, and title deed audit.</p>
+            </div>
+
+            <form onsubmit="handleFormSubmit(event)" class="space-y-4">
+                <input type="hidden" id="modal-property-name" value="General Inquiry">
+                <div>
+                    <label class="text-xs font-bold text-slate-600 uppercase block mb-1">Your Full Name</label>
+                    <input type="text" required placeholder="Alexander Smith" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary">
+                </div>
+                <div>
+                    <label class="text-xs font-bold text-slate-600 uppercase block mb-1">Email Address</label>
+                    <input type="email" required placeholder="alex@domain.com" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary">
+                </div>
+                <div>
+                    <label class="text-xs font-bold text-slate-600 uppercase block mb-1">Phone / WhatsApp</label>
+                    <input type="tel" required placeholder="+44 7911 123456" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary">
+                </div>
+                <button type="submit" class="w-full bg-secondary hover:bg-orange-600 text-white font-bold py-3 rounded-lg text-sm shadow-lg transition">
+                    Send Me Property Dossier
+                </button>
+                <p class="text-[11px] text-slate-400 text-center">We respect your privacy. No spam. Direct WhatsApp consultation available.</p>
+            </form>
+        </div>
+    </div>
+
+    <!-- QUICK CALL/WHATSAPP FLOATING BUTTON -->
+    <div class="fixed bottom-6 right-6 z-40 flex flex-col gap-3">
+        <a href="https://wa.me/359885149901" target="_blank" class="w-13 h-13 bg-green-500 hover:bg-green-600 text-white p-3.5 rounded-full shadow-xl flex items-center justify-center text-2xl transition hover:scale-110" title="Chat on WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Mobile menu toggle
+        const mobileBtn = document.getElementById('mobile-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Modal triggers
+        const modal = document.getElementById('modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalPropertyInput = document.getElementById('modal-property-name');
+
+        function openModal(title = "Get Instant Property Dossier") {
+            modalTitle.innerText = title;
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+        }
+
+        function requestProperty(propertyName) {
+            modalPropertyInput.value = propertyName;
+            openModal("Details for: " + propertyName);
+        }
+
+        // Close on clicking outside modal
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Form feedback simulation
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            alert("Thank you! Your inquiry has been dispatched to our English-speaking brokers in Burgas. We will contact you via WhatsApp / Phone shortly.");
+            closeModal();
+        }
+    </script>
+</body>
+</html>
